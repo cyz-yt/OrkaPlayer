@@ -6,7 +6,7 @@ A media player for Windows that plays pretty much anything, because the VLC engi
 
 **[Download the latest version](https://github.com/cyz-yt/OrkaPlayer/releases/latest)** · [Website](https://cyzs-retroweb.rf.gd/orkaplayer.php)
 
-Current version: **2.2 "Cortado"**
+Current version: **2.2.1 "Cortado"**
 
 ## What it does
 
@@ -47,7 +47,7 @@ Current version: **2.2 "Cortado"**
 
 ## Installing
 
-1. Download `OrkaPlayer-2.2-setup.exe` from [Releases](https://github.com/cyz-yt/OrkaPlayer/releases/latest).
+1. Download `OrkaPlayer-2.2.1-setup.exe` from [Releases](https://github.com/cyz-yt/OrkaPlayer/releases/latest).
 2. Run it. Windows may show "Windows protected your PC", because the installer is not code-signed. Click **More info**, then **Run anyway**.
 3. **Express** installs everything. **Custom** lets you leave out parts you do not need: video playback, taskbar buttons, Discord, Save Audio and audio CDs. Leaving all of them out gives a lean audio-only player.
 
@@ -56,8 +56,8 @@ Current version: **2.2 "Cortado"**
 **Quiet install** (for scripts):
 
 ```
-OrkaPlayer-2.2-setup.exe --fast
-OrkaPlayer-2.2-setup.exe /SILENT /CURRENTUSER /assoc=no /updates=no
+OrkaPlayer-2.2.1-setup.exe --fast
+OrkaPlayer-2.2.1-setup.exe /SILENT /CURRENTUSER /assoc=no /updates=no
 ```
 
 `--fast` installs with just a progress bar. `/assoc=no` leaves file associations alone, `/updates=no` turns off the update check, and `/ALLUSERS` installs for everyone on the computer.
@@ -90,6 +90,12 @@ Nothing goes online without a reason, and each of these can be turned off in Set
 - **Update check:** at most once a day, OrkaPlayer reads a small version file from the website. Nothing is downloaded until you say so. *Settings > Online*
 - **Problem reports:** sent only when you click **Send Report**. Paths and your Windows user name are removed, and you can read every line first. *Settings > Online*
 - **Discord:** talks only to the Discord app on your own computer. *Settings > Online*
+
+## Changes in 2.2.1
+
+- Lyrics no longer go missing when lrclib.net is busy - OrkaPlayer asks again a few times instead of giving up.
+- The oscilloscope keeps up after jumping around in a track.
+- Clicking OK in Settings no longer mutes the music for a few seconds.
 
 ## Changes in 2.2 "Cortado"
 
