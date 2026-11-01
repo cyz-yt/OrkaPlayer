@@ -124,4 +124,4 @@ Older versions are on the [Releases](https://github.com/cyz-yt/OrkaPlayer/releas
 ## More from the same author
 
 - [OrkaNote](https://cyzs-retroweb.rf.gd/orkanote.php): a Notepad for Windows, lighter than the built-in one.
-- [OrkaLinux](https://cyzs-retroweb.rf.gd/orkalinux.php): a Linux distribution built on Debian 12 with KDE Plasma.
+- [OrkaLinux](https://github.com/cyz-yt/OrkaLinux): a Linux distribution built on Debian 13 with KDE Plasma 6.
