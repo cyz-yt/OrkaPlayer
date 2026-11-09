@@ -6,7 +6,7 @@ A media player for Windows that plays pretty much anything, because the VLC engi
 
 **[Download the latest version](https://github.com/cyz-yt/OrkaPlayer/releases/latest)** · [Website](https://cyzs-retroweb.rf.gd/orkaplayer.php)
 
-Current version: **2.4 "Espresso"**
+Current version: **2.4.1 "Espresso"**
 
 ## What it does
 
@@ -32,7 +32,7 @@ Current version: **2.4 "Espresso"**
 - A `.lrc` file next to the track always wins, then lyrics stored inside the file. Otherwise OrkaPlayer looks the song up on [LRCLIB](https://lrclib.net) and keeps what it found, so it never asks twice.
 
 **Looking at it**
-- An oscilloscope, a spectrum, level meters or the cover art while music plays - one click switches between them. The oscilloscope works on internet radio too.
+- An oscilloscope, a spectrum, level meters or the cover art while music plays - pick one in Tools > Visualisation. The oscilloscope works on internet radio too.
 - A mini player (Ctrl+M): a small strip that stays on top, with the current line of the lyrics.
 - Playlists in tabs, with search, sorting, duplicate removal, drag to reorder and a queue (Play Next / Add to Queue). Files you open and discs get their own tabs.
 
@@ -53,7 +53,7 @@ Current version: **2.4 "Espresso"**
 | ![Edit Tags](screenshots/edit-tags.png) | ![Playlist menu](screenshots/playlist-menu.png) |
 | Editing tags | Play Next, Add to Queue and Edit Tags right in the playlist |
 | ![Spectrum](screenshots/spectrum-switch.png) | ![Tools menu](screenshots/tools-menu-2.4.png) |
-| One click switches the visualisation | The Tools menu in 2.4 |
+| The spectrum, one of four visualisations | The Tools menu in 2.4 |
 | ![Sync Lyrics](screenshots/sync-lyrics.png) | ![Mini player](screenshots/mini-player.png) |
 | Syncing your own lyrics | The mini player |
 | ![Find Stations](screenshots/find-stations.png) | ![TV from a link](screenshots/tv-stream.png) |
@@ -65,7 +65,7 @@ Current version: **2.4 "Espresso"**
 
 ## Installing
 
-1. Download `OrkaPlayer-2.4-setup.exe` from [Releases](https://github.com/cyz-yt/OrkaPlayer/releases/latest).
+1. Download `OrkaPlayer-2.4.1-setup.exe` from [Releases](https://github.com/cyz-yt/OrkaPlayer/releases/latest).
 2. Run it. Windows may show "Windows protected your PC", because the installer is not code-signed. Click **More info**, then **Run anyway**.
 3. **Express** installs everything. **Custom** lets you leave out parts you do not need: video playback (with subtitles and teletext), internet radio and streams, links to web pages, taskbar buttons, Discord, Save Audio and audio CDs. Leaving all of them out gives a lean player for music files.
 
@@ -74,7 +74,7 @@ Current version: **2.4 "Espresso"**
 **Quiet install** (for scripts):
 
 ```
-OrkaPlayer-2.4-setup.exe /SILENT /CURRENTUSER /assoc=no /updates=no
+OrkaPlayer-2.4.1-setup.exe /SILENT /CURRENTUSER /assoc=no /updates=no
 ```
 
 `/assoc=no` leaves file associations alone, `/updates=no` turns off the update check, and `/ALLUSERS` installs for everyone on the computer.
@@ -124,9 +124,17 @@ Nothing goes online without a reason, and each of these can be turned off in Set
 - **Station search:** only what you type in Find Stations goes to radio-browser.info. *Settings > Online*
 - **TV channel search:** the channel list is downloaded from iptv-org (github.io) at most once a day, and the search runs on your computer. *Settings > Online, the same switch as the station search*
 - **Podcasts:** only the RSS link you add is asked, and only when you open that podcast.
-- **Update check:** at most once a day, OrkaPlayer reads a small version file from the website. Nothing is downloaded until you say so. *Settings > Online*
+- **Update check:** each time OrkaPlayer starts, it reads a small version file from the website in the background. Nothing is downloaded until you say so. *Settings > Online*
 - **Problem reports:** sent only when you click **Send Report**. Paths and your Windows user name are removed, and you can read every line first. *Settings > Online*
 - **Discord:** talks only to the Discord app on your own computer. *Settings > Online*
+
+## Changes in 2.4.1 "Espresso"
+
+A bugfix release for 2.4.
+
+- The window for adding a radio station (and for naming an equalizer preset) grows with Windows scaling, so Cancel is no longer cut off.
+- New versions are looked for every time OrkaPlayer starts, not once a day.
+- A click on the oscilloscope no longer switches the visualisation by accident. Pick it in Tools > Visualisation.
 
 ## Changes in 2.4 "Espresso"
 
