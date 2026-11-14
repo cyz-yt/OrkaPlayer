@@ -1,12 +1,12 @@
 # OrkaPlayer
 
-A media player for Windows that plays pretty much anything, because the VLC engine sits inside it. No codec packs, no ads, nothing to sign up for. It has a classic, no-nonsense look, and it sings along: song lyrics scroll in time with the music, they can fill the whole screen in karaoke mode, and since 2.4 it plays podcasts and finds TV channels too.
+A media player for Windows that plays pretty much anything, because the VLC engine sits inside it. No codec packs, no ads, nothing to sign up for. It has a classic, no-nonsense look, and it sings along: song lyrics scroll in time with the music, they can fill the whole screen in karaoke mode, it plays podcasts and finds TV channels, and since 2.5 it has proper tools for films, sound effects and a spectrogram that shows pictures hidden in music.
 
 ![OrkaPlayer in karaoke mode](screenshots/karaoke.png)
 
 **[Download the latest version](https://github.com/cyz-yt/OrkaPlayer/releases/latest)** · [Website](https://cyzs-retroweb.rf.gd/orkaplayer.php)
 
-Current version: **2.4.1 "Espresso"**
+Current version: **2.5 "Flat White"**
 
 ## What it does
 
@@ -19,11 +19,21 @@ Current version: **2.4.1 "Espresso"**
 - Audio CDs straight from the drive, with CD-Text titles when the disc has them. A whole disc rips to a folder in one go.
 - Discs full of MP3s play like a folder and their files copy to your computer. Home-made DVD films play too.
 - Edit the tags of a song: title, artist, album, year, track number, genre and a cover picture.
+- `.cue` files: a whole album in one file plays as separate songs. Long files get bookmarks (Ctrl+B).
+
+**Films**
+- Tools > Video: aspect ratio, cropping, rotation and deinterlacing, plus brightness, contrast, saturation, hue and gamma.
+- Subtitles or sound out of sync? G and H move the subtitles, J and K move the sound. E and Shift+E step frame by frame.
+- File info (Ctrl+I): codecs, resolution, frames, sound and subtitles.
+
+**Sound effects**
+- Bass boost, wider stereo or a room, and a compressor for quiet evenings.
 
 **Radio, TV and podcasts**
 - Internet radio: your own list of stations, plus a search through tens of thousands of stations on [radio-browser.info](https://www.radio-browser.info) by name, genre or country.
 - TV channels: search free channels by name, country or category ([iptv-org](https://github.com/iptv-org/iptv)), or open any stream link - including channels from a satellite or cable box. Channel lists (`.m3u`) keep their names, and teletext is there when the channel carries it.
 - Podcasts: paste a podcast's RSS link and play its episodes.
+- Record internet radio to MP3 with one click - a new file for every song, named after the artist and title the station sends.
 
 **Lyrics**
 - Lyrics are found by themselves, scroll with the song and turn green as they are sung.
@@ -32,7 +42,7 @@ Current version: **2.4.1 "Espresso"**
 - A `.lrc` file next to the track always wins, then lyrics stored inside the file. Otherwise OrkaPlayer looks the song up on [LRCLIB](https://lrclib.net) and keeps what it found, so it never asks twice.
 
 **Looking at it**
-- An oscilloscope, a spectrum, level meters or the cover art while music plays - pick one in Tools > Visualisation. The oscilloscope works on internet radio too.
+- An oscilloscope, a spectrum, mirrored bars, a spectrogram, level meters or the cover art while music plays - pick one in Tools > Visualisation. The oscilloscope works on internet radio too.
 - A mini player (Ctrl+M): a small strip that stays on top, with the current line of the lyrics.
 - Playlists in tabs, with search, sorting, duplicate removal, drag to reorder and a queue (Play Next / Add to Queue). Files you open and discs get their own tabs.
 
@@ -42,12 +52,19 @@ Current version: **2.4.1 "Espresso"**
 - Discord Rich Presence, with an option to hide the track title.
 - Only one copy runs at a time, so it can be driven from the command line (see below).
 - Portable mode: put an empty `portable.txt` next to `OrkaPlayer.exe` and the settings stay on the drive.
+- Window languages (experimental): Polish, German, Spanish, French, Italian, Portuguese and Ukrainian, or make your own. English is the default.
 - Updates: OrkaPlayer can check for a new version, download the installer from this GitHub page and check its SHA-256 before running it.
 
 ## Screenshots
 
 | | |
 |---|---|
+| ![Spectrogram](screenshots/spectrogram.png) | ![Mirrored bars](screenshots/mirror.png) |
+| The spectrogram - with text hidden in the sound | Mirrored bars |
+| ![A film](screenshots/video.png) | ![Picture](screenshots/picture.png) |
+| A film with the picture turned up | Brightness, contrast, saturation, hue and gamma |
+| ![Sound Effects](screenshots/sound-effects.png) | ![File Info](screenshots/file-info.png) |
+| Sound effects | File info (Ctrl+I) |
 | ![Podcasts](screenshots/podcasts.png) | ![Find TV Channels](screenshots/find-tv.png) |
 | Podcasts | Finding TV channels |
 | ![Edit Tags](screenshots/edit-tags.png) | ![Playlist menu](screenshots/playlist-menu.png) |
@@ -65,16 +82,16 @@ Current version: **2.4.1 "Espresso"**
 
 ## Installing
 
-1. Download `OrkaPlayer-2.4.1-setup.exe` from [Releases](https://github.com/cyz-yt/OrkaPlayer/releases/latest).
+1. Download `OrkaPlayer-2.5-setup.exe` from [Releases](https://github.com/cyz-yt/OrkaPlayer/releases/latest).
 2. Run it. Windows may show "Windows protected your PC", because the installer is not code-signed. Click **More info**, then **Run anyway**.
-3. **Express** installs everything. **Custom** lets you leave out parts you do not need: video playback (with subtitles and teletext), internet radio and streams, links to web pages, taskbar buttons, Discord, Save Audio and audio CDs. Leaving all of them out gives a lean player for music files.
+3. **Express** installs everything. **Custom** lets you leave out parts you do not need: video playback (with subtitles and teletext), internet radio and streams, links to web pages, taskbar buttons, Discord, Save Audio and audio CDs. Leaving all of them out gives a lean player for music files. Window languages are only in Custom and are not ticked by default.
 
 **Requirements:** Windows 7 SP1 or newer, 64-bit, and .NET Framework 4.7.2 or newer. Windows 10 and 11 already have it. If it is missing, Setup says so and points to the download.
 
 **Quiet install** (for scripts):
 
 ```
-OrkaPlayer-2.4.1-setup.exe /SILENT /CURRENTUSER /assoc=no /updates=no
+OrkaPlayer-2.5-setup.exe /SILENT /CURRENTUSER /assoc=no /updates=no
 ```
 
 `/assoc=no` leaves file associations alone, `/updates=no` turns off the update check, and `/ALLUSERS` installs for everyone on the computer.
@@ -91,6 +108,11 @@ OrkaPlayer-2.4.1-setup.exe /SILENT /CURRENTUSER /assoc=no /updates=no
 | Ctrl+L | Sync Lyrics |
 | Ctrl+T | Edit the tags of the song that is playing |
 | Ctrl+K | Podcasts |
+| Ctrl+I | File info |
+| Ctrl+B | Add a bookmark (Ctrl+Shift+B, Ctrl+Alt+B to jump) |
+| G / H | Subtitles earlier or later |
+| J / K | Sound earlier or later |
+| E, Shift+E | Next or previous frame |
 | Ctrl+E | Equalizer |
 | Ctrl+R | Radio |
 | Ctrl+U | Open a network stream |
@@ -128,6 +150,18 @@ Nothing goes online without a reason, and each of these can be turned off in Set
 - **Problem reports:** sent only when you click **Send Report**. Paths and your Windows user name are removed, and you can read every line first. *Settings > Online*
 - **Discord:** talks only to the Discord app on your own computer. *Settings > Online*
 
+## Changes in 2.5 "Flat White"
+
+- Two new visualisations: mirrored bars and a spectrogram that scrolls like a waterfall.
+- Tools > Video: aspect ratio, cropping, rotation, deinterlacing, and the picture (brightness, contrast, saturation, hue, gamma).
+- Subtitles and sound can be moved when out of sync (G/H, J/K), frame by frame with E and Shift+E, file info with Ctrl+I.
+- Sound effects: bass boost, wider stereo or a room, and a compressor.
+- Record internet radio to MP3, a new file for every song.
+- `.cue` files play as separate songs, and long files get bookmarks.
+- Window languages (experimental), or make your own.
+- Report a Problem in Settings, "Up to Date" shows what is new, and covers can be edited in OrkaPaint.
+- Fixed: shuffle no longer plays a song twice before the round is over.
+
 ## Changes in 2.4.1 "Espresso"
 
 A bugfix release for 2.4.
@@ -150,18 +184,6 @@ A bugfix release for 2.4.
 - Safer updates: only from this GitHub page, only over https, only with a matching checksum.
 - Fixed: the oscilloscope on internet radio no longer freezes every few seconds.
 
-## Changes in 2.3 "Doppio"
-
-- Karaoke mode: press F11 and the lyrics fill the whole screen.
-- Sync your own lyrics: paste the words, play the song and tap Space at each line. Saved as a `.lrc` next to the song.
-- Mini player (Ctrl+M) that stays on top, with the current line of the lyrics.
-- Crossfade between songs, off by default.
-- TV from a link: streams with a picture show it, channel lists keep their names, and teletext is in Tools.
-- Find Stations in Radio: search radio-browser.info by name, genre or country.
-- Rip a whole audio CD to a folder in one go.
-- More parts of Setup can be left out: subtitles, teletext, radio and streams, links to web pages.
-- Fixed: lyrics that were found no longer vanish when the tags load, `.m3u` channel lists no longer load empty, and a `cover.jpg` in Music or Downloads no longer becomes the cover of every loose song.
-
 Older versions are on the [Releases](https://github.com/cyz-yt/OrkaPlayer/releases) page.
 
 ## Built with
@@ -174,5 +196,6 @@ Older versions are on the [Releases](https://github.com/cyz-yt/OrkaPlayer/releas
 ## More from the same author
 
 - [OrkaNote](https://github.com/cyz-yt/OrkaNote): a Notepad for Windows with tabs that come back, colours for code, Run (F9) for scripts and a dark theme.
+- [OrkaPaint](https://github.com/cyz-yt/OrkaPaint): a drawing program for Windows - a bit more than plain Paint, with layers, selections and effects.
 - [OrkaLinux](https://github.com/cyz-yt/OrkaLinux): a Linux distribution built on Debian 13 with KDE Plasma 6.
 - [cyz's ISO Creator](https://github.com/cyz-yt/cyzs-ISO-Creator): makes an ISO file from a folder - for getting documents into a virtual machine without VMware Tools.
