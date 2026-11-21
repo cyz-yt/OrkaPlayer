@@ -6,7 +6,7 @@ A media player for Windows that plays pretty much anything, because the VLC engi
 
 **[Download the latest version](https://github.com/cyz-yt/OrkaPlayer/releases/latest)** · [Website](https://cyzs-retroweb.rf.gd/orkaplayer.php)
 
-Current version: **2.5 "Flat White"**
+Current version: **2.5.1 "Flat White"**
 
 ## What it does
 
@@ -60,11 +60,13 @@ Current version: **2.5 "Flat White"**
 | | |
 |---|---|
 | ![Spectrogram](screenshots/spectrogram.png) | ![Mirrored bars](screenshots/mirror.png) |
-| The spectrogram - with text hidden in the sound | Mirrored bars |
+| The spectrogram | Mirrored bars |
 | ![A film](screenshots/video.png) | ![Picture](screenshots/picture.png) |
-| A film with the picture turned up | Brightness, contrast, saturation, hue and gamma |
+| A film | Brightness, contrast, saturation, hue and gamma |
 | ![Sound Effects](screenshots/sound-effects.png) | ![File Info](screenshots/file-info.png) |
 | Sound effects | File info (Ctrl+I) |
+| ![Language Editor](screenshots/language-editor.png) | ![Settings](screenshots/settings-2.5.1.png) |
+| The language editor (2.5.1) | Settings |
 | ![Podcasts](screenshots/podcasts.png) | ![Find TV Channels](screenshots/find-tv.png) |
 | Podcasts | Finding TV channels |
 | ![Edit Tags](screenshots/edit-tags.png) | ![Playlist menu](screenshots/playlist-menu.png) |
@@ -82,7 +84,7 @@ Current version: **2.5 "Flat White"**
 
 ## Installing
 
-1. Download `OrkaPlayer-2.5-setup.exe` from [Releases](https://github.com/cyz-yt/OrkaPlayer/releases/latest).
+1. Download `OrkaPlayer-2.5.1-setup.exe` from [Releases](https://github.com/cyz-yt/OrkaPlayer/releases/latest).
 2. Run it. Windows may show "Windows protected your PC", because the installer is not code-signed. Click **More info**, then **Run anyway**.
 3. **Express** installs everything. **Custom** lets you leave out parts you do not need: video playback (with subtitles and teletext), internet radio and streams, links to web pages, taskbar buttons, Discord, Save Audio and audio CDs. Leaving all of them out gives a lean player for music files. Window languages are only in Custom and are not ticked by default.
 
@@ -91,7 +93,7 @@ Current version: **2.5 "Flat White"**
 **Quiet install** (for scripts):
 
 ```
-OrkaPlayer-2.5-setup.exe /SILENT /CURRENTUSER /assoc=no /updates=no
+OrkaPlayer-2.5.1-setup.exe /SILENT /CURRENTUSER /assoc=no /updates=no
 ```
 
 `/assoc=no` leaves file associations alone, `/updates=no` turns off the update check, and `/ALLUSERS` installs for everyone on the computer.
@@ -149,6 +151,14 @@ Nothing goes online without a reason, and each of these can be turned off in Set
 - **Update check:** each time OrkaPlayer starts, it reads a small version file from the website in the background. Nothing is downloaded until you say so. *Settings > Online*
 - **Problem reports:** sent only when you click **Send Report**. Paths and your Windows user name are removed, and you can read every line first. *Settings > Online*
 - **Discord:** talks only to the Discord app on your own computer. *Settings > Online*
+
+## Changes in 2.5.1 "Flat White"
+
+- Starts faster: Setup prepares the VLC engine once, instead of OrkaPlayer going through all its plugins every time.
+- A language editor in Settings, and every window fully translated - file dialogs and tooltips too.
+- File type names in Explorer in the program's language.
+- "Up to Date" and "Built-in Checks" keep their lists behind a button.
+- The log notes the sound settings at start.
 
 ## Changes in 2.5 "Flat White"
 
