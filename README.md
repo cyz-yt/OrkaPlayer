@@ -6,7 +6,7 @@ A media player for Windows that plays pretty much anything, because the VLC engi
 
 **[Download the latest version](https://github.com/cyz-yt/OrkaPlayer/releases/latest)** · [Website](https://cyzs-retroweb.rf.gd/orkaplayer.php)
 
-Current version: **2.5.1 "Flat White"**
+Current version: **2.5.2 "Flat White"**
 
 ## What it does
 
@@ -84,7 +84,7 @@ Current version: **2.5.1 "Flat White"**
 
 ## Installing
 
-1. Download `OrkaPlayer-2.5.1-setup.exe` from [Releases](https://github.com/cyz-yt/OrkaPlayer/releases/latest).
+1. Download `OrkaPlayer-2.5.2-setup.exe` from [Releases](https://github.com/cyz-yt/OrkaPlayer/releases/latest).
 2. Run it. Windows may show "Windows protected your PC", because the installer is not code-signed. Click **More info**, then **Run anyway**.
 3. **Express** installs everything. **Custom** lets you leave out parts you do not need: video playback (with subtitles and teletext), internet radio and streams, links to web pages, taskbar buttons, Discord, Save Audio and audio CDs. Leaving all of them out gives a lean player for music files. Window languages are only in Custom and are not ticked by default.
 
@@ -93,10 +93,12 @@ Current version: **2.5.1 "Flat White"**
 **Quiet install** (for scripts):
 
 ```
-OrkaPlayer-2.5.1-setup.exe /SILENT /CURRENTUSER /assoc=no /updates=no
+OrkaPlayer-2.5.2-setup.exe /SILENT /CURRENTUSER /assoc=no /updates=no
 ```
 
 `/assoc=no` leaves file associations alone, `/updates=no` turns off the update check, and `/ALLUSERS` installs for everyone on the computer.
+
+Without these switches, an update keeps what is set now.
 
 ## Keyboard
 
@@ -151,6 +153,16 @@ Nothing goes online without a reason, and each of these can be turned off in Set
 - **Update check:** each time OrkaPlayer starts, it reads a small version file from the website in the background. Nothing is downloaded until you say so. *Settings > Online*
 - **Problem reports:** sent only when you click **Send Report**. Paths and your Windows user name are removed, and you can read every line first. *Settings > Online*
 - **Discord:** talks only to the Discord app on your own computer. *Settings > Online*
+
+## Changes in 2.5.2 "Flat White"
+
+Bug fixes. I am very sorry for putting out such faulty updates - 2.5.1 should not have gone out with these bugs.
+
+- Messages come in a window that looks like the rest of OrkaPlayer, and they are all translated.
+- Language Editor: the name field no longer runs into its label, and a new Delete button.
+- Settings > Playback: the output device list fits long names.
+- `--dev-mode` says so in a message instead of a tray balloon.
+- Setup keeps your options on an update.
 
 ## Changes in 2.5.1 "Flat White"
 
